@@ -1,0 +1,246 @@
+:root {
+  --accent-color: #f5f5f5;
+  --bg-color: #fff;
+  --light-text: rgb(128, 128, 128);
+  --ouline: rgb(148, 148, 148);
+}
+
+body {
+  padding: 0px;
+  margin: 0px;
+  min-height: 100vh;
+}
+
+header {
+  position: relative;
+  height: 10vh;
+  background: var(--accent-color);
+  margin-bottom: 30px;
+  border-bottom: 1px solid var(--ouline);
+}
+
+.repository {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.repo-tag {
+  border: 1px solid grey;
+  padding: 3px;
+}
+
+.repo-actions {
+  display: flex;
+  justify-content: space-around;
+  margin: 5px;
+}
+
+.repo-button {
+  margin: 3px;
+  border-radius: 5px;
+  padding: 5px;
+  box-shadow: 0px 0px 5px 0.5px rgba(192, 200, 209, 0.336);
+  cursor: pointer;
+}
+
+.repo-name a {
+  font-size: 1.5rem;
+  text-decoration: none;
+  color: rgb(58, 58, 184);
+  font-weight: 600;
+  margin: 5px;
+}
+
+.sections {
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: larger;
+  color: rgb(99, 98, 98);
+  bottom: 0px;
+}
+
+.underline {
+  border-bottom: 3px solid orange;
+}
+
+.mobile {
+  display: flex;
+  align-items: center;
+}
+
+.dot-menu {
+  display: none;
+}
+
+.section-button {
+  margin: 3px;
+  padding: 7px;
+  cursor: pointer;
+}
+
+.section-button:hover {
+  text-shadow: 0 0 0.01px black;
+}
+
+main {
+  display: grid;
+  place-items: center;
+}
+
+.issues-container {
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px;
+  outline: 1px solid var(--ouline);
+}
+
+.header {
+  background-color: var(--accent-color);
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+  color: var(--light-text);
+}
+
+i {
+  padding: 3px;
+}
+
+.issues-count {
+  font-size: smaller;
+}
+
+.issues-action {
+  display: flex;
+  font-size: 0.8rem;
+  margin-left: 20vw;
+}
+
+.dropdown-button {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.issue-item {
+  display: flex;
+  flex-direction: row;
+  outline: 1px solid var(--ouline);
+  position: relative;
+  padding: 5px;
+}
+
+.issue-item:hover {
+  background: var(--accent-color);
+}
+
+.issue-item > i {
+  color: green;
+}
+
+.issue-desc {
+  max-width: 70%;
+}
+
+.issue-title {
+  font-weight: bold;
+}
+
+.issue-metadata {
+  margin-top: 4px;
+  font-size: small;
+  color: var(--light-text);
+}
+
+.unconfirmed {
+  background-color: violet;
+}
+
+.bug {
+  background-color: rgb(179, 32, 32);
+  color: white;
+}
+
+.dev-tools {
+  background-color: rgb(240, 199, 16);
+}
+
+.tag {
+  padding: 4px;
+  border-radius: 10px;
+  overflow: hidden;
+  white-space: nowrap;
+  font-size: 0.8rem;
+}
+
+.comment {
+  position: absolute;
+  right: 3px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+footer {
+  border-top: 1px solid var(--ouline);
+  box-sizing: border-box;
+  margin-top: 10vh;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+  padding: 2vh;
+  font-size: 1.1rem;
+  bottom: 0px;
+}
+
+footer a {
+  text-decoration: none;
+  margin: 0px 7px;
+}
+
+footer i {
+  font-size: 1.3rem;
+  color: var(--light-text);
+}
+
+@media screen and (max-width: 768px) {
+  .issues-action {
+    width: 100%;
+    margin: 2px;
+  }
+
+  header {
+    height: 17vh;
+  }
+
+  .mobile {
+    display: none;
+  }
+
+  .sections {
+    margin-top: auto;
+  }
+
+  .dot-menu {
+    display: inline;
+  }
+
+  .dot-menu:hover ~ .mobile {
+    display: flex;
+    height: fit-content;
+    flex-direction: column;
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    background-color: var(--accent-color);
+    z-index: 1;
+    transform: translateY(100%);
+  }
+}
